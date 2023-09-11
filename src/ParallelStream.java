@@ -11,13 +11,10 @@ public class ParallelStream {
                .reduce(1,(x,y) -> x+y);
         System.out.println(total);
 
-
         String[] arrayName= {"Andrew","Einstein","Edward","Mark","SaiRam","Maarie","Marcus"};
         List<String> nameList= new ArrayList<>(Arrays.asList(arrayName));
 
         nameList.parallelStream().filter(s-> s.startsWith("M")).forEach(s-> System.out.println(s));
-
-        
 
     }
 }
