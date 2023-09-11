@@ -16,5 +16,6 @@ public class ParallelStream {
 
         nameList.parallelStream().filter(s-> s.startsWith("M")).forEach(s-> System.out.println(s));
 
+        System.out.println("hi there");
     }
 }
