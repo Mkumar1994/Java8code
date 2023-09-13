@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class StreamExample {
     public static void main(String[] args) {
-        String[] names={"Adnane","Mary","Laila","Dennis","Nitin","sairam","Maaike"};
+        /*String[] names={"Adnane","Mary","Laila","Dennis","Nitin","sairam","Maaike"};
         List<String> nameList =  new ArrayList<>(Arrays.asList(names));
 
         //create stream based on array.
@@ -42,7 +42,44 @@ public class StreamExample {
 
         int[] ints ={1,2,3,4,5};
         int total =Arrays.stream(ints).reduce(0,(x,y) ->x+y);
-        System.out.println(total);
+        System.out.println(total);*/
+
+        /*List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9);
+        List<Integer> cubeNumber = numbers.stream().map(a->a*a*a).collect(Collectors.toList());
+
+        System.out.println("cube of the Numbers:" +cubeNumber);*/
+
+        List<Integer> naturalNumbers =Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> nNumber = naturalNumbers.stream().filter(x ->x%2 ==0).collect(Collectors.toList());
+        System.out.println(nNumber);
+
+        List<Integer> numberss = Arrays.asList(10,1,9,7,5,12,4);
+        List<Integer>num =numberss.stream().sorted().collect(Collectors.toList());
+        System.out.println(num);
+
+        List<String> countries = Arrays.asList("Bharath","Malaysia","Nepal","Bhutan","sri lanka","Afghanistan","Balochistan","Bharath","Bhutan");
+
+        List<String> distinctCountries = countries.stream().distinct().sorted().collect(Collectors.toList());
+
+        System.out.println(distinctCountries);
+
+
+        List<String> listOfCountries = Arrays.asList("India", "Indonesia", "Nepal", "Afghanistan");
+
+        List<String> output =  listOfCountries.stream().filter(x-> x.toString().startsWith("I")).collect(Collectors.toList());
+        System.out.println(output);
+
+
+        List<String> countriess = Arrays.asList("Bharat","Canada","Indonesia","Sri lanka","Malaysia","Nepal","Moraaco");
+        long countNumber = countriess.stream().filter(i -> i.startsWith("M")).count();
+        System.out.println(countNumber);
+
+        List<String> listCountries = Arrays.asList("Bharat","Canada","Indonesia","Sri lanka","Malaysia","Nepal","Moraaco");
+        boolean anyMatchCountries = listCountries.stream().noneMatch(x->x.startsWith("I"));
+        System.out.println(anyMatchCountries);
+
+
+
 
     }
 }

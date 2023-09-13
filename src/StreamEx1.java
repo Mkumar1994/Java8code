@@ -7,7 +7,8 @@ import java.util.stream.Stream;
 
 public class StreamEx1 {
     public static void main(String[] args) {
-        String[] arrayList = {"Adnane","Mary","Laila","Dennis","Nitin","sairam","Maaike"};
+
+        /*String[] arrayList = {"Adnane","Mary","Laila","Dennis","Nitin","sairam","Maaike"};
 
         List<String> nameList =  new ArrayList<>(Arrays.asList(arrayList));
 
@@ -15,7 +16,7 @@ public class StreamEx1 {
         nameList.stream().filter(s -> s.startsWith("M")).forEach(s-> System.out.println(s));
 
         //map
-        nameList.stream().map(s->s +" student").forEach(s-> System.out.println(s));
+        nameList.stream().map(s->s +" student").forEach(s-> System.out.println(s));*/
 
 
         /*String[][] names2d = { arrayList, arrayList };
@@ -28,7 +29,7 @@ public class StreamEx1 {
           }*/
 
 
-        String[][] names2d = { arrayList, arrayList };
+       /* String[][] names2d = { arrayList, arrayList };
 
         String[]  name1d = Stream.of(names2d).
                 flatMap(arr-> Stream.of(arr)).
@@ -47,7 +48,32 @@ public class StreamEx1 {
         System.out.println("distinct values "+distinctValues);
 
 
-        Arrays.stream(name1d).sorted().forEach(s-> System.out.println("sorted list:"+ s));
+        Arrays.stream(name1d).sorted().forEach(s-> System.out.println("sorted list:"+ s));*/
+
+
+        List<String> lang =Arrays.asList("Java","c","Joke","Jump");
+        List<String> filteredlan = lang.stream().filter(x->x.startsWith("J")).collect(Collectors.toList());
+        System.out.println(filteredlan);
+
+
+        List<String> stringNumber = Arrays.asList("1","2","4","0","5","6");
+         List<Integer> ConvertedNumber = stringNumber.stream().map(Integer::valueOf).collect(Collectors.toList());
+        System.out.println(ConvertedNumber);
+
+        List<String> listCountries = Arrays.asList("Bharat","Malaysia","Canada","Indonesia","Bharat","Sri lanka","Malaysia","Nepal","Moracco","Sri lanka");
+        List<String> filtredCountries = listCountries.stream().distinct().collect(Collectors.toList());
+        System.out.println(filtredCountries);
+
+
+        List<String> listOuntries = Arrays.asList("Bharat","Malaysia","Canada","Indonesia","Bharat","Sri lanka","Malaysia","Nepal","Moracco","Sri lanka");
+        List<String> list         = listOuntries.stream().limit(5).collect(Collectors.toList());
+        List<String> skkipedCountries = listOuntries.stream().skip(3).collect(Collectors.toList());
+
+
+        System.out.println(list);
+        System.out.println("skkiped Countries:"+skkipedCountries);
+
+
 
     }
     }
